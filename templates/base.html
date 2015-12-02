@@ -46,10 +46,18 @@
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
+      <style>
+        .jumbotron {
+          padding-top: 20px;
+          padding-bottom: 0px;
+          margin-bottom: 0px;
+          background-color: #FFFFFF;
+      }
+      </style>
       <div class="container">
-        <h1>Welcome!</h1>
-        <p>This is a template for hookerlab.</p>
-        <p><a class="btn btn-primary btn-lg" href="http://hookerlab.martinos.org/" role="button">Learn more &raquo;</a></p>
+        {% block jumbotron %}
+        <p><a class="btn btn-primary btn-sm" href="http://hookerlab.martinos.org/" role="button">Request Scan &raquo;</a></p>
+        {% endblock %}
       </div>
     </div>
 
@@ -88,16 +96,15 @@
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-    
+
     <div class="container">
+      <hr>
         {% block content %}
         
         {% endblock %}
-
       <hr>
-
       <footer>
-        <p>asdf footer</p>
+        <p>Footer HERE</p>
       </footer>
     </div> <!-- /container -->
 
