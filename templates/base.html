@@ -52,7 +52,7 @@
         <p><a class="btn btn-primary btn-lg" href="http://hookerlab.martinos.org/" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
-    
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -63,15 +63,29 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="{% url 'home' %}">Hookerlab</a>
+          <style>
+            .navbar-inverse .navbar-brand {
+              color: #FFFFFF;
+            }
+          </style>
         </div>
-        {% block navbar %}
+        
         <div id="navbar" class="navbar-collapse collapse">
+        <style>
+          label{
+            color: #FFFFFF;
+          }
+        </style>
+        {% block navbar %}
           <form action="{% url 'logout' %}" method="post" class="navbar-form navbar-right">{% csrf_token %}
+            <div class="form-group">
+              <label for="username">{{full_name}}</label>
+              
+            </div>
             <button type="submit" value="logout" class="btn btn-success">Logout</button>
           </form>
-        </div><!--/.navbar-collapse -->
         {% endblock %}
-        
+        </div><!--/.navbar-collapse -->
       </div>
     </nav>
     
