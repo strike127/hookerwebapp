@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
+from hookerlab.forms import myRegistrationForm
 
 def home(request):
     context = {}
@@ -40,13 +41,15 @@ def logout(request):
 
 def register_user(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        # form = UserCreationForm(request.POST)
+        form = myRegistrationForm(request.POST)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/register_success/')
     args = {}
     args.update(csrf(request))
-    args['form'] = UserCreationForm()
+    # args['form'] = UserCreationForm()
+    args['form'] = myRegistrationForm()
     return render(request,'register.html',args)
 
 def register_success(request):
