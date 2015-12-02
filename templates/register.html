@@ -2,16 +2,16 @@
 
 {% block navbar %}
 <style>
-            label{
-              color: #000000;
-            }
-          </style>
+label{
+color: #000000;
+}
+</style>
 {% endblock %}
 
 {% block jumbotron %}
 <h2>Register</h2>
 <form action="/register/" method="post">{% csrf_token %}
-{{form}}
+{{form.as_ul}}
 <input type="submit" value="Register" />
 </form>
 {% endblock %}
