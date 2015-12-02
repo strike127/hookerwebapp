@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^logout/', 'hookerlab.views.logout', name='logout'),
     url(r'^loggedin/', 'hookerlab.views.loggedin', name='loggedin'),
     url(r'^invalid/', 'hookerlab.views.invalid_login', name='invalid_login'),
+    url(r'^register/', 'hookerlab.views.register_user', name='register_user'),
+    url(r'^register_success/', 'hookerlab.views.register_success', name='register_success'),
     
 ]
