@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block jumbotron %}
-        <h1>Welcome!</h1>
+        <h1>Welcome {{ template_title }}</h1>
         <p>Sign in to request or view a scan.</p>
         <p><a class="btn btn-primary btn-lg" href="http://hookerlab.martinos.org/" role="button">Go to Hookerlab &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" href="{% url 'register_user' %}" role="button">Register &raquo;</a></p>
