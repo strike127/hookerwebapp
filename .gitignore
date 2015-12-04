@@ -1,2 +1,5 @@
 db.sqlite3
 manage.py
+hookerlab/__pycache__/models.cpython-34.pyc
+person/
+templates/people.html
