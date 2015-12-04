@@ -6,7 +6,12 @@ from django.contrib.auth.forms import UserCreationForm
 from hookerlab.forms import myRegistrationForm
 
 def home(request):
-    context = {}
+    title = ''
+    if request.user.is_authenticated():
+        title = request.user
+    context = {
+        "template_title":title,
+    }
     template = "home.html"
     return render(request, template, context)
 
@@ -54,3 +59,5 @@ def register_user(request):
 
 def register_success(request):
     return render(request, 'register_success.html')
+
+
