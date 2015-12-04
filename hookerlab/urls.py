@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^invalid/', 'hookerlab.views.invalid_login', name='invalid_login'),
     url(r'^register/', 'hookerlab.views.register_user', name='register_user'),
     url(r'^register_success/', 'hookerlab.views.register_success', name='register_success'),
-    
+    # url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^people/', 'person.views.people', name='people'),
 ]
