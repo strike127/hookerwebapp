@@ -22,4 +22,5 @@ def scan_requested(request):
     return render(request, 'scan_requested.html')
 
 def scan(request):
-    return render(request, "scantable.html", {"scan": Scan.objects.filter(compound = 'f18')})
+    return render(request, "scantable.html", {"scan": Scan.objects.all()})
+    # return render(request, "scantable.html", {"scan": Scan.objects.filter(compound = 'f18').values('name')})
