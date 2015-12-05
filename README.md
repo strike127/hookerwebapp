@@ -3,7 +3,8 @@
 1. ~~Login~~
 2. ~~Registration~~
 3. Place Order/Book scan
->type,compound,date/time,status ->ordered
+>~~type,compound,date/time,~~
+status ->ordered (need to find way to not need textfield to insert into column)
 
 4. synthesize tracer 
 >table of orders, initial activity, time, status ->synthesized
