@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block navbar %}
+<style>
+label{
+color: #000000;
+}
+</style>
+{% endblock %}
+
+{% block jumbotron %}
+<div class="row">
+    <div class="col-sm-6 col-md-3"
+        <h2>Request Scan</h2>
+        <form action="/request_scan/" method="post">{% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" value="Request" />
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
