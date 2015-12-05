@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'crispy_forms',
     'django_tables2',
     # 'person',
+    'scan',
 )
 
 MIDDLEWARE_CLASSES = (
