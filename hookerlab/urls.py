@@ -27,5 +27,10 @@ urlpatterns = [
     url(r'^register/', 'hookerlab.views.register_user', name='register_user'),
     url(r'^register_success/', 'hookerlab.views.register_success', name='register_success'),
     # url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^people/', 'person.views.people', name='people'),
+    url(r'^request_scan/', 'scan.views.request_scan', name='scan'),
+    url(r'^scan_requested/', 'scan.views.scan_requested', name='scanrequested'),
+    url(r'^table/', 'scan.views.scan', name='people'),
+    # url(r'^people/', 'person.views.people', name='people'),
+    
+    
 ]
