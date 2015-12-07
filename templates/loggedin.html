@@ -2,27 +2,29 @@
 
 {% block content %}
 
-<h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+<h2>Ordered Scans</h2>         
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Subject</th>
         <th>Compound</th>
-        <th>name</th>
-        <th>email</th>
-        <th>request_date</th>
-        <th>updated_date</th>
-        <th>request_time</th>
-        <th>updated_time</th>
-        <th>date_for_scan</th>
-        <th>time_for_scan</th>
-        <th>current_status</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Request_date</th>
+        <th>Updated_date</th>
+        <th>Request_time</th>
+        <th>Updated_time</th>
+        <th>Date_for_scan</th>
+        <th>Time_for_scan</th>
+        <th>Current_status</th>
+        <th>Synthesize?</th>
       </tr>
     </thead>
     <tbody>
       {% for b in obj %}
         <tr>
+          <td>{{ b.id }}</td>
           <td>{{ b.subject }}</td>
           <td>{{ b.compound }}</td>
           <td>{{ b.name }}</td>
@@ -34,6 +36,7 @@
           <td>{{ b.date_for_scan }}</td>
           <td>{{ b.time_for_scan }}</td>
           <td>{{ b.current_status }}</td>
+          <td><a class="btn btn-primary btn-sm" href="http://hookerlab.martinos.org/" role="button">synthesize &raquo;</a></td>
         </tr>
        {% endfor %}
     </tbody>
