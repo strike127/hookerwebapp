@@ -2,5 +2,40 @@
 
 {% block content %}
 
-<p>Table of requested/my scans here</p>
+<h2>Striped Rows</h2>
+  <p>The .table-striped class adds zebra-stripes to a table:</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Compound</th>
+        <th>name</th>
+        <th>email</th>
+        <th>request_date</th>
+        <th>updated_date</th>
+        <th>request_time</th>
+        <th>updated_time</th>
+        <th>date_for_scan</th>
+        <th>time_for_scan</th>
+        <th>current_status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in obj %}
+        <tr>
+          <td>{{ b.subject }}</td>
+          <td>{{ b.compound }}</td>
+          <td>{{ b.name }}</td>
+          <td>{{ b.email }}</td>
+          <td>{{ b.request_date }}</td>
+          <td>{{ b.updated_date }}</td>
+          <td>{{ b.request_time }}</td>
+          <td>{{ b.updated_time }}</td>
+          <td>{{ b.date_for_scan }}</td>
+          <td>{{ b.time_for_scan }}</td>
+          <td>{{ b.current_status }}</td>
+        </tr>
+       {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
