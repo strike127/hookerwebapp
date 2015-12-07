@@ -12,9 +12,9 @@ def home(request):
     template = "home.html"
     context = {}
     if request.user.is_authenticated():
-        title = request.user
+        title = request.user.username
         context = {
-            "template_title":title,
+            "full_name":title,
             "obj": Scan.objects.all(),
         }
         template = 'loggedin.html'
@@ -34,7 +34,7 @@ def auth_view(request):
     
     if user is not None:
          auth.login(request,user)
-         return HttpResponseRedirect('/loggedin/')
+         return HttpResponseRedirect('/')
     else:
          return HttpResponseRedirect('/invalid/')
     
