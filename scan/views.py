@@ -10,7 +10,13 @@ from scan.models import Scan
 def request_scan(request):
     if request.method == 'POST' or request.method == None:
         form = ScanForm(request.POST)
+        user = request.user
+        print(user)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.name = user
+            form.email = user.email
+            form.current_status = 'Ordered'
             form.save()
             return HttpResponseRedirect('/scan_requested/')
     args = {}
@@ -22,5 +28,6 @@ def scan_requested(request):
     return render(request, 'scan_requested.html')
 
 def scan(request):
-    return render(request, "scantable.html", {"scan": Scan.objects.all()})
+    return render(request, "loggedin.html", {"obj": Scan.objects.all()})
+    # return render(request, "scantable.html", {"scan": Scan.objects.all()})
     # return render(request, "scantable.html", {"scan": Scan.objects.filter(compound = 'f18').values('name')})
