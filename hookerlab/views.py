@@ -4,15 +4,21 @@ from django.contrib import auth
 from django.core.context_processors import csrf
 from django.contrib.auth.forms import UserCreationForm
 from hookerlab.forms import myRegistrationForm
+from scan.views import scan
+from scan.models import Scan
 
 def home(request):
     title = ''
+    template = "home.html"
+    context = {}
     if request.user.is_authenticated():
         title = request.user
-    context = {
-        "template_title":title,
-    }
-    template = "home.html"
+        context = {
+            "template_title":title,
+            "obj": Scan.objects.all(),
+        }
+        template = 'loggedin.html'
+        return render(request, template, context)
     return render(request, template, context)
 
 # def login(request):
@@ -33,7 +39,7 @@ def auth_view(request):
          return HttpResponseRedirect('/invalid/')
     
 def loggedin(request):
-    context = {'full_name':request.user.username}
+    context = {'full_name':request.user.username,}
     template = "loggedin.html"
     return render(request, template, context)
 
