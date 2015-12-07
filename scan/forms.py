@@ -7,6 +7,7 @@ class ScanForm(forms.ModelForm):
         # fields = ['email', 'name', 'subject', 'compound', 'current_status', 'date_for_scan', 'time_for_scan']
         # fields = ['subject', 'compound', 'date_for_scan', 'time_for_scan']
         exclude = ['email', 'name', 'current_status']
+    
     # def save(self, commit=True):
     #     scan = super(ScanForm, self).save(commit=False)
     #     scan.email = self.cleaned_data['email']
