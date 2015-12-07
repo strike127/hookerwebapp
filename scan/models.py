@@ -3,9 +3,13 @@ from django.db import models
 # Create your models here.
 class Scan(models.Model):
     subject = models.CharField(max_length = 10)
-    compound = models.CharField(max_length = 3)
     current_status = models.CharField(max_length=20)
-    
+    CHOICES = (
+        ('C11','C11'),
+        ('F18','F18')
+        )
+    compound = models.CharField(max_length=3, choices=CHOICES)
+    # field = forms.ChoiceField(choices=CHOICES, required=True, label='Example')
     #get from request.user
     name = models.CharField(verbose_name="full name", max_length=30)
     # name = request.user
