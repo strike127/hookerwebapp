@@ -1,4 +1,5 @@
 # hookerwebapp
+## Uses python 3.4.3, django 1.8.7, django-crispy-forms 1.5.2, django-tables2 1.0.4
 
 1. ~~Login~~
 2. ~~Registration~~
