@@ -13,10 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Scan',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
                 ('subject', models.CharField(max_length=10)),
-                ('compound', models.CharField(max_length=3)),
                 ('current_status', models.CharField(max_length=20)),
+                ('compound', models.CharField(max_length=3, choices=[('C11', 'C11'), ('F18', 'F18')])),
                 ('name', models.CharField(max_length=30, verbose_name='full name')),
                 ('email', models.EmailField(max_length=120)),
                 ('request_date', models.DateField(auto_now_add=True)),
