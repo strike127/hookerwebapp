@@ -36,7 +36,7 @@
           <td>{{ b.date_for_scan }}</td>
           <td>{{ b.time_for_scan }}</td>
           <td>{{ b.current_status }}</td>
-          <td><a type="submit" class="btn btn-primary btn-sm" name="_check" value={{ b.id }} href="{% url 'synthesize' %}" role="button">synthesize &raquo;</a></td>
+          <td><a type="submit" class="btn btn-primary btn-sm" name="_check" value={{ b.id }} role="button">synthesize &raquo;</a></td>
         </tr>
        {% endfor %}
     </tbody>
