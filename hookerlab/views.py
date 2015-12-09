@@ -16,12 +16,14 @@ def home(request):
         if request.user.is_superuser:
             context = {
                 "full_name":title,
-                "obj": Scan.objects.all(),
+                "obj_order": Scan.objects.filter(current_status = 'Ordered'),
+                "obj_synth": Scan.objects.filter(current_status = 'Synthesized'),
             }
         else:
             context = {
                 "full_name":title,
-                "obj": Scan.objects.filter(name = title),
+                "obj_order": Scan.objects.filter(name = title, current_status = 'Ordered'),
+                "obj_synth": Scan.objects.filter(name = title, current_status = 'Synthesized'),
             }
         template = 'loggedin.html'
         return render(request, template, context)
