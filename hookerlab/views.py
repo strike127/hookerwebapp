@@ -13,10 +13,16 @@ def home(request):
     context = {}
     if request.user.is_authenticated():
         title = request.user.username
-        context = {
-            "full_name":title,
-            "obj": Scan.objects.all(),
-        }
+        if request.user.is_superuser:
+            context = {
+                "full_name":title,
+                "obj": Scan.objects.all(),
+            }
+        else:
+            context = {
+                "full_name":title,
+                "obj": Scan.objects.filter(name = title),
+            }
         template = 'loggedin.html'
         return render(request, template, context)
     return render(request, template, context)
