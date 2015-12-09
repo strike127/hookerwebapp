@@ -28,6 +28,9 @@ def scan_requested(request):
     return render(request, 'scan_requested.html')
 
 def scan(request):
-    return render(request, "loggedin.html", {"obj": Scan.objects.all()})
+    if request.user.is_superuser():
+        return render(request, "loggedin.html", {"obj": Scan.objects.all()})
+    else:
+        return render(request, "loggedin.html", {"obj": Scan.objects.filter(name = request.user.username)})
     # return render(request, "scantable.html", {"scan": Scan.objects.all()})
     # return render(request, "scantable.html", {"scan": Scan.objects.filter(compound = 'f18').values('name')})
