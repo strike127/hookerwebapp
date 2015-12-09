@@ -29,6 +29,8 @@ urlpatterns = [
     # url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^request_scan/', 'scan.views.request_scan', name='requestscan'),
     url(r'^scan_requested/', 'scan.views.scan_requested', name='scanrequested'),
+    url(r'^request_synthesis/', 'scan.views.synthesize_request', name='requestsynth'),
+    url(r'^synthesized/', 'scan.views.synthesized', name='synthesized'),
     # url(r'^table/', 'scan.views.scan', name='people'),
     # url(r'^people/', 'person.views.people', name='people'),
     
