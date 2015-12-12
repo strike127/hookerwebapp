@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from scan.forms import ScanForm
 from scan.models import Scan
 from scan.forms import SynthesizeForm
+from scan.forms import PerfScanForm
 
 # Create your views here.
 def request_scan(request):
@@ -31,8 +32,8 @@ def scan_requested(request):
 
 def synthesize_request(request):
     if request.method == 'POST' or request.method == None:
-        inst = Scan.objects.get(id = '_check')
-        form = SynthesizeForm(request.POST, instance=inst)
+        # inst = Scan.objects.get(id = '_check')
+        form = SynthesizeForm(request.POST)
         user = request.user
         if form.is_valid():
             form = form.save(commit=False)
@@ -46,6 +47,31 @@ def synthesize_request(request):
 
 def synthesized(request):
     return render(request, 'synthesized.html')
+
+
+def perform_scan_request(request):
+    if request.method == 'POST' or request.method == None:
+        # inst = Scan.objects.get(id = '_check')
+        form = PerfScanForm(request.POST)
+        user = request.user
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.current_status = 'Completed'
+            form.save()
+            return HttpResponseRedirect('/scan_complete/')
+    args = {}
+    args.update(csrf(request))
+    args['form'] = PerfScanForm()
+    return render(request,'perfScan.html',args)
+
+def perform_scan_completed(request):
+    return render(request, 'perfScanComplete.html')
+
+
+
+
+
+
 
 
 def scan(request):
