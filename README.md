@@ -10,8 +10,8 @@
 >~~table of orders, initial activity, ~~time~~, status ->synthesized~~ (can display new row, need to update existing record)
 
 5. perform scan
->table of synthesized, activity at TOI, time, status -> completed
+>~~table of synthesized, activity at TOI, time, status -> completed~~(can display new row, need to update existing record)
 
 6. dashboard
->table of all scans and status
->>type of scan, compound, date, status
+>~~table of all scans and status~~
+>>~~type of scan, compound, date, status~~
