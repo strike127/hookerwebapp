@@ -25,7 +25,7 @@ class Scan(models.Model):
     synthesize_time_auto = models.TimeField(auto_now_add=False, auto_now=True)
     
     #field for perform scan
-    toi = models.DecimalField(max_digits=5, decimal_places=3, null=True)
+    toi_activity = models.DecimalField(max_digits=5, decimal_places=3, null=True)
     scan_time = models.CharField(max_length = 30)
     scan_time_auto = models.TimeField(auto_now_add=False, auto_now=True)
 
