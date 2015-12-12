@@ -18,12 +18,14 @@ def home(request):
                 "full_name":title,
                 "obj_order": Scan.objects.filter(current_status = 'Ordered'),
                 "obj_synth": Scan.objects.filter(current_status = 'Synthesized'),
+                "obj_comp": Scan.objects.filter(current_status = 'Completed'),
             }
         else:
             context = {
                 "full_name":title,
                 "obj_order": Scan.objects.filter(name = title, current_status = 'Ordered'),
                 "obj_synth": Scan.objects.filter(name = title, current_status = 'Synthesized'),
+                "obj_comp": Scan.objects.filter(name = title, current_status = 'Completed'),
             }
         template = 'loggedin.html'
         return render(request, template, context)
