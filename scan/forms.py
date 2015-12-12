@@ -40,6 +40,18 @@ class SynthesizeForm(forms.ModelForm):
             'subject': 'Group to which this message belongs to',
             'compound': 'C11/F18',
         }
+        
+class PerfScanForm(forms.ModelForm):
+    class Meta:
+        model = Scan
+        # fields = ['email', 'name', 'subject', 'compound', 'current_status', 'date_for_scan', 'time_for_scan']
+        fields = ['toi_activity', 'scan_time']
+        # exclude = ['email', 'name', 'current_status']
+        
+        help_texts = {
+            'subject': 'Group to which this message belongs to',
+            'compound': 'C11/F18',
+        }
     
     # def save(self, commit=True):
     #     scan = super(ScanForm, self).save(commit=False)
