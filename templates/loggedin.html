@@ -82,7 +82,7 @@
           <td>{{ b.init_activity }}</td>
           <td>{{ b.synthesize_time }}</td>
           <td>{{ b.current_status }}</td>
-          <td><a type="submit" class="btn btn-primary btn-sm" name="_check" value={{ b.id }} href="{% url 'perfScan' %}" role="button">Perform Scan &raquo;</a></td>
+          <td><a type="submit" class="btn btn-primary btn-sm" name="curr_id" value="{{ b.id}}" href="{% url 'perfScan' %}" role="button">Perform Scan &raquo;</a></td>
         </tr>
        {% endfor %}
     </tbody>
