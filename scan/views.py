@@ -31,8 +31,10 @@ def scan_requested(request):
     return render(request, 'scan_requested.html')
 
 def synthesize_request(request):
+    print(request.POST.get('curr_id'))
     if request.method == 'POST' or request.method == None:
         # inst = Scan.objects.get(id = '_check')
+        
         form = SynthesizeForm(request.POST)
         user = request.user
         if form.is_valid():
