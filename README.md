@@ -7,7 +7,7 @@
 >~~type,compound,date/time, status ->ordered~~(add as text field, will find way to allow user to choose a date and time instead of text)
 
 4. synthesize tracer 
->~~table of orders, initial activity, ~~time~~, status ->synthesized~~ 
+>~~table of orders, initial activity, time, status -> synthesized~~ 
 
 5. perform scan
 >~~table of synthesized, activity at TOI, time, status -> completed~~
