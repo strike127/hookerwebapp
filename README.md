@@ -7,11 +7,14 @@
 >~~type,compound,date/time, status ->ordered~~(add as text field, will find way to allow user to choose a date and time instead of text)
 
 4. synthesize tracer 
->~~table of orders, initial activity, ~~time~~, status ->synthesized~~ (can display new row, need to update existing record)
+>~~table of orders, initial activity, ~~time~~, status ->synthesized~~ 
 
 5. perform scan
->~~table of synthesized, activity at TOI, time, status -> completed~~(can display new row, need to update existing record)
+>~~table of synthesized, activity at TOI, time, status -> completed~~
 
 6. dashboard
 >~~table of all scans and status~~
 >>~~type of scan, compound, date, status~~
+
+
+(can display all data correctly, just need to update existing record for each step order->synth->complete instead of creating new records)
