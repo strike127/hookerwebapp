@@ -12,6 +12,49 @@ color: #000000;
 {% block jumbotron %}
 <div class="row">
     <div class="col-sm-6 col-md-3"
+         <h2>Current Synthesized Scan</h2>         
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Subject</th>
+                  <th>Compound</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Request_date</th>
+                  <th>Updated_date</th>
+                  <th>Request_time</th>
+                  <th>Updated_time</th>
+                  <th>Date_for_scan</th>
+                  <th>Time_for_scan</th>
+                  <th>Initial Activity</th>
+                  <th>Initial Activity Time</th>
+                  <th>Current_status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for b in obj_curr %}
+                  <tr>
+                    <td>{{ b.id }}</td>
+                    <td>{{ b.subject }}</td>
+                    <td>{{ b.compound }}</td>
+                    <td>{{ b.name }}</td>
+                    <td>{{ b.email }}</td>
+                    <td>{{ b.request_date }}</td>
+                    <td>{{ b.updated_date }}</td>
+                    <td>{{ b.request_time }}</td>
+                    <td>{{ b.updated_time }}</td>
+                    <td>{{ b.date_for_scan }}</td>
+                    <td>{{ b.time_for_scan }}</td>
+                    <td>{{ b.init_activity }}</td>
+                    <td>{{ b.synthesize_time }}</td>
+                    <td>{{ b.current_status }}</td>
+                  </tr>
+                 {% endfor %}
+              </tbody>
+            </table>
+          <hr>
+          
         <h2>Perform Scan</h2>
         <form action="/perform_scan/{{curr_id}}/" method="post">{% csrf_token %}
         {{form|crispy}}
