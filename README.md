@@ -17,4 +17,4 @@
 >>~~type of scan, compound, date, status~~
 
 
-(can display all data correctly, just need to update existing record for each step order->synth->complete instead of creating new records)
+~~(can display all data correctly, just need to update existing record for each step order->synth->complete instead of creating new records)~~ records now update correctly
