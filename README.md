@@ -4,7 +4,7 @@
 1. ~~Login~~
 2. ~~Registration~~
 3. Place Order/Book scan
->~~type,compound,date/time, status ->ordered~~(add as text field, will find way to allow user to choose a date and time instead of text)
+>~~type,compound,date/time, status ->ordered~~
 
 4. synthesize tracer 
 >~~table of orders, initial activity, time, status -> synthesized~~ 
@@ -18,3 +18,5 @@
 
 
 ~~(can display all data correctly, just need to update existing record for each step order->synth->complete instead of creating new records)~~ records now update correctly
+
+(time and date add as text field, will find way to allow user to choose a date and time instead of text)
