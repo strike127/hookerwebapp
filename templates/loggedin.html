@@ -36,7 +36,7 @@
           <td>{{ b.date_for_scan }}</td>
           <td>{{ b.time_for_scan }}</td>
           <td>{{ b.current_status }}</td>
-          <td><a type="submit" class="btn btn-primary btn-sm" name="rowid" value={{ b.id }} href="{% url 'requestsynth' %}" role="button">synthesize &raquo;</a></td>
+          <td><a type="submit" class="btn btn-primary btn-sm" href="request_synthesis/{{b.id}}" role="button">Synthesize &raquo;</a></td>
         </tr>
        {% endfor %}
     </tbody>
@@ -82,7 +82,7 @@
           <td>{{ b.init_activity }}</td>
           <td>{{ b.synthesize_time }}</td>
           <td>{{ b.current_status }}</td>
-          <td><a type="submit" class="btn btn-primary btn-sm" name="curr_id" value="{{ b.id}}" href="{% url 'perfScan' %}" role="button">Perform Scan &raquo;</a></td>
+          <td><a type="submit" class="btn btn-primary btn-sm" href="perform_scan/{{b.id}}">Perform Scan &raquo;</a></td>
         </tr>
        {% endfor %}
     </tbody>
