@@ -30,12 +30,12 @@ def request_scan(request):
 def scan_requested(request):
     return render(request, 'scan_requested.html')
 
-def synthesize_request(request):
-    print(request.POST.get('curr_id'))
+def synthesize_request(request, current_id):
+    # print(request.POST.get('curr_id'))
+    print(current_id)
+    inst = Scan.objects.get(id=current_id)
     if request.method == 'POST' or request.method == None:
-        # inst = Scan.objects.get(id = '_check')
-        
-        form = SynthesizeForm(request.POST)
+        form = SynthesizeForm(request.POST, instance=inst)
         user = request.user
         if form.is_valid():
             form = form.save(commit=False)
@@ -45,16 +45,18 @@ def synthesize_request(request):
     args = {}
     args.update(csrf(request))
     args['form'] = SynthesizeForm()
+    args['curr_id'] = current_id
     return render(request,'synthesis.html',args)
 
 def synthesized(request):
     return render(request, 'synthesized.html')
 
 
-def perform_scan_request(request):
+def perform_scan_request(request, current_id):
+    print(current_id)
+    inst = Scan.objects.get(id=current_id)
     if request.method == 'POST' or request.method == None:
-        # inst = Scan.objects.get(id = '_check')
-        form = PerfScanForm(request.POST)
+        form = PerfScanForm(request.POST, instance=inst)
         user = request.user
         if form.is_valid():
             form = form.save(commit=False)
@@ -64,6 +66,7 @@ def perform_scan_request(request):
     args = {}
     args.update(csrf(request))
     args['form'] = PerfScanForm()
+    args['curr_id'] = current_id
     return render(request,'perfScan.html',args)
 
 def perform_scan_completed(request):
