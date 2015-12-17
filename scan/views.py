@@ -18,8 +18,6 @@ def request_scan(request):
             form.name = user
             form.email = user.email
             form.current_status = 'Ordered'
-            form.init_activity = '0.00'
-            form.toi = '0.00'
             form.save()
             return HttpResponseRedirect('/scan_requested/')
     args = {}
@@ -46,6 +44,7 @@ def synthesize_request(request, current_id):
     args.update(csrf(request))
     args['form'] = SynthesizeForm()
     args['curr_id'] = current_id
+    args['obj_curr'] = Scan.objects.filter(id=current_id)
     return render(request,'synthesis.html',args)
 
 def synthesized(request):
@@ -67,6 +66,7 @@ def perform_scan_request(request, current_id):
     args.update(csrf(request))
     args['form'] = PerfScanForm()
     args['curr_id'] = current_id
+    args['obj_curr'] = Scan.objects.filter(id=current_id)
     return render(request,'perfScan.html',args)
 
 def perform_scan_completed(request):
